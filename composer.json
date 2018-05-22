@@ -1,0 +1,32 @@
+{
+    "name": "moguyun-cms/trip-pages",
+    "description": "moguyun trip pages",
+    "type": "moguyun-cms-extension",
+    "version": "0.0.1",
+    "keywords": [
+        "moguyun-cms-extension",
+        "trip pages"
+    ],
+    "support": {
+        "docs": "https://github.com/moguyun-cms/trip-pages/blob/master/README.md",
+        "issues": "https://github.com/moguyun-cms/trip-pages/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zackseo",
+            "homepage": "zacksleo.github.io"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "moguyun\\cms\\trip\\pages\\": "src/"
+        }
+    }
+}
