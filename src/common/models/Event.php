@@ -1,6 +1,6 @@
 <?php
 
-namespace moguyun\cms\trip\event\models;
+namespace moguyun\cms\trip\event\common\models;
 
 use Yii;
 
@@ -17,14 +17,14 @@ use Yii;
  * @property int $created_at 创建时间
  * @property int $updated_at 更新时间
  */
-class EventPage extends \yii\db\ActiveRecord
+class Event extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%event_page}}';
+        return '{{%event}}';
     }
 
     /**
@@ -33,7 +33,7 @@ class EventPage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['slug', 'title', 'template', 'store_id'], 'required'],
+            [['slug', 'title', 'template', 'event_store_id'], 'required'],
             [['template', 'store_id', 'created_at', 'updated_at'], 'integer'],
             [['slug', 'title', 'keywords', 'description'], 'string', 'max' => 255],
         ];

@@ -1,5 +1,5 @@
 {
-    "name": "moguyun-cms/trip-event-pages",
+    "name": "moguyun-cms/trip-event",
     "description": "moguyun trip event pages",
     "type": "moguyun-cms-extension",
     "version": "0.0.1",
@@ -8,8 +8,8 @@
         "trip event pages"
     ],
     "support": {
-        "docs": "https://github.com/moguyun-cms/trip-event-pages/blob/master/README.md",
-        "issues": "https://github.com/moguyun-cms/trip-event-pages/issues"
+        "docs": "https://github.com/moguyun-cms/trip-event/blob/master/README.md",
+        "issues": "https://github.com/moguyun-cms/trip-event/issues"
     },
     "license": "MIT",
     "authors": [

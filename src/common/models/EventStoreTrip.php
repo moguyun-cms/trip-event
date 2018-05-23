@@ -1,6 +1,6 @@
 <?php
 
-namespace moguyun\cms\trip\event\models;
+namespace moguyun\cms\trip\event\common\models;
 
 use Yii;
 
@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "{{%event_store_trip}}".
  *
  * @property int $id
- * @property int $store_id 所属仓库
+ * @property int $event_store_id 所属仓库
  * @property string $sn 线路编号
  * @property string $label 标签
  * @property int $order 序号
@@ -29,8 +29,8 @@ class EventStoreTrip extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['store_id', 'sn', 'label'], 'required'],
-            [['store_id', 'order'], 'integer'],
+            [['event_store_id', 'sn', 'label'], 'required'],
+            [['event_store_id', 'order'], 'integer'],
             [['sn', 'label'], 'string', 'max' => 255],
         ];
     }

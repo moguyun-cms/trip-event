@@ -1,6 +1,6 @@
 <?php
 
-namespace moguyun\cms\trip\event\models;
+namespace moguyun\cms\trip\event\common\models;
 
 use Yii;
 
