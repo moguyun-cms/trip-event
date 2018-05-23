@@ -30,6 +30,6 @@ class m180522_145636_create_event_page_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('{{%page}}');
+        $this->dropTable('{{%event_page}}');
     }
 }

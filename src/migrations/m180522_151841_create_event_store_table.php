@@ -5,14 +5,14 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `store`.
  */
-class m180522_151841_create_store_table extends Migration
+class m180522_151841_create_event_store_table extends Migration
 {
     /**
      * @inheritdoc
      */
     public function up()
     {
-        $this->createTable('{{%store}}', [
+        $this->createTable('{{%event_store}}', [
             'id' => $this->primaryKey(),
             'parent_id' => $this->integer()->defaultValue(0)->comment('隶属仓库'),
             'created_at' => $this->integer()->comment('创建时间'),
@@ -25,6 +25,6 @@ class m180522_151841_create_store_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('{{%store}}');
+        $this->dropTable('{{%event_store}}');
     }
 }

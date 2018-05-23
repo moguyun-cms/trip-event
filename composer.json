@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "moguyun\\cms\\trip\\pages\\": "src/"
+            "moguyun\\cms\\trip\\event\\": "src/"
         }
     }
 }

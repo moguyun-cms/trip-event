@@ -5,14 +5,14 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `store_trip`.
  */
-class m180522_153333_create_store_trip_table extends Migration
+class m180522_153333_create_event_store_trip_table extends Migration
 {
     /**
      * @inheritdoc
      */
     public function up()
     {
-        $this->createTable('{{%store_trip}}', [
+        $this->createTable('{{%event_store_trip}}', [
             'id' => $this->primaryKey(),
             'store_id' => $this->integer()->notNull()->comment('所属仓库'),
             'sn' => $this->string()->notNull()->comment('线路编号'),
@@ -26,6 +26,6 @@ class m180522_153333_create_store_trip_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('{{%store_trip}}');
+        $this->dropTable('{{%event_store_trip}}');
     }
 }
