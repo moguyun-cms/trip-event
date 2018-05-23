@@ -24,9 +24,12 @@
             "url": "https://asset-packagist.org"
         }
     ],
+    "require": {
+        "nemmo/yii2-attachments": "^1.0@beta"
+    },
     "autoload": {
         "psr-4": {
-          "moguyun\\cms\\trip\\pages\\": "src/"
+            "moguyun\\cms\\trip\\pages\\": "src/"
         }
     }
 }
