@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model moguyun\cms\trip\event\common\models\EventStore */
 
-$this->title = 'Update Event Store: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Event Stores', 'url' => ['index']];
+$this->title = '更新';
+$this->params['breadcrumbs'][] = ['label' => '仓库', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '更新';
 ?>
 <div class="event-store-update">
 

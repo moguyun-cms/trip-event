@@ -33,13 +33,15 @@ class StoreController extends Controller
      * Lists all EventStore models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($store_id)
     {
+        $model = $this->findModel($store_id);
         $dataProvider = new ActiveDataProvider([
-            'query' => EventStore::find(),
+            'query' => EventStore::find()->where(['parent_id' => $store_id]),
         ]);
 
         return $this->render('index', [
+            'model' => $model,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -62,9 +64,10 @@ class StoreController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($store_id)
     {
         $model = new EventStore();
+        $model->parent_id = $store_id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

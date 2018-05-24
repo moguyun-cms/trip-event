@@ -13,9 +13,10 @@ use Yii;
  * @property string $keywords 关键词
  * @property string $description 描述
  * @property int $template 模板
- * @property int $store_id 仓库
+ * @property int $event_store_id 仓库
  * @property int $created_at 创建时间
  * @property int $updated_at 更新时间
+ * @property EventStore $store
  */
 class Event extends \yii\db\ActiveRecord
 {
@@ -33,9 +34,10 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['slug', 'title', 'template', 'event_store_id'], 'required'],
-            [['template', 'store_id', 'created_at', 'updated_at'], 'integer'],
-            [['slug', 'title', 'keywords', 'description'], 'string', 'max' => 255],
+            [['slug', 'title', 'template'], 'required'],
+            ['slug', 'unique'],
+            [['event_store_id', 'created_at', 'updated_at'], 'integer'],
+            [['template', 'slug', 'title', 'keywords', 'description'], 'string', 'max' => 255],
         ];
     }
 
@@ -62,5 +64,26 @@ class Event extends \yii\db\ActiveRecord
         return [
             'default' => '默认'
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            $store = new EventStore();
+            $store->save();
+            $store->title = $this->title;
+            $this->event_store_id = $store->id;
+        }
+        return parent::beforeSave($insert);
+    }
+
+    public function afterDelete()
+    {
+        $this->store->delete();
+    }
+
+    public function getStore()
+    {
+        return $this->hasOne(EventStore::className(), ['id' => 'event_store_id']);
     }
 }
