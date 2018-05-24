@@ -29,6 +29,7 @@ class EventStore extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'created_at', 'updated_at'], 'integer'],
+            ['parent_id', 'default', 'value' => 0]
         ];
     }
 
@@ -42,6 +43,18 @@ class EventStore extends \yii\db\ActiveRecord
             'parent_id' => '隶属仓库',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => \yii\behaviors\TimestampBehavior::className(),
+            ]
         ];
     }
 }

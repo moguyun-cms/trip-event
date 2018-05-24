@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model moguyun\cms\trip\event\models\EventPage */
 
-$this->title = 'Update Event Page: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Event Pages', 'url' => ['index']];
+$this->title = '更新';
+$this->params['breadcrumbs'][] = ['label' => '活动页', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

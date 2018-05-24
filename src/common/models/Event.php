@@ -51,9 +51,16 @@ class Event extends \yii\db\ActiveRecord
             'keywords' => '关键词',
             'description' => '描述',
             'template' => '模板',
-            'store_id' => '仓库',
+            'event_store_id' => '仓库',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
+        ];
+    }
+
+    public static function getTemplateList()
+    {
+        return [
+            'default' => '默认'
         ];
     }
 }

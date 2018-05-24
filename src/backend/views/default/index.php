@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'keywords',
             'description',
             //'template',
-            //'store_id',
+            //'event_store_id',
             //'created_at',
             //'updated_at',
 

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use moguyun\cms\trip\event\common\models\EventStore;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model moguyun\cms\trip\event\common\models\EventStore */
@@ -12,14 +14,12 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'parent_id')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'parent_id')->dropDownList(ArrayHelper::map(EventStore::find()->all(), 'id', 'name'), [
+        'prompt' => '--无--'
+    ]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('保存', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

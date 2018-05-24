@@ -3,16 +3,16 @@
 namespace moguyun\cms\trip\event\backend\controllers;
 
 use Yii;
-use moguyun\cms\trip\event\common\models\EventStore;
+use moguyun\cms\trip\event\common\models\Event;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EventStoreController implements the CRUD actions for EventStore model.
+ * EventController implements the CRUD actions for EventPage model.
  */
-class EventStoreController extends Controller
+class DefaultController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,13 +30,13 @@ class EventStoreController extends Controller
     }
 
     /**
-     * Lists all EventStore models.
+     * Lists all Event models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => EventStore::find(),
+            'query' => Event::find(),
         ]);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class EventStoreController extends Controller
     }
 
     /**
-     * Displays a single EventStore model.
+     * Displays a single Event model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class EventStoreController extends Controller
     }
 
     /**
-     * Creates a new EventStore model.
+     * Creates a new EventPage model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new EventStore();
+        $model = new Event();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class EventStoreController extends Controller
     }
 
     /**
-     * Updates an existing EventStore model.
+     * Updates an existing Event model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class EventStoreController extends Controller
     }
 
     /**
-     * Deletes an existing EventStore model.
+     * Deletes an existing Event model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class EventStoreController extends Controller
     }
 
     /**
-     * Finds the EventStore model based on its primary key value.
+     * Finds the Event model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return EventStore the loaded model
+     * @return Event the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = EventStore::findOne($id)) !== null) {
+        if (($model = Event::findOne($id)) !== null) {
             return $model;
         }
 
