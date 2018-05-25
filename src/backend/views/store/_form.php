@@ -25,7 +25,8 @@ $this->registerCss($css);
 
         <div class="form-body">
         <?= $form->field($model, 'title')->textInput(['maxlength' => true]); ?>
-        <h4>相关线路</h4>
+        <?php if (!$model->isNewRecord) : ?>
+            <h4>相关线路</h4>
             <a id="fn-append" class="btn btn-sm btn-primary">添加</a>
             <table class="table">
                 <thead>
@@ -72,6 +73,7 @@ $this->registerCss($css);
                     <?php endforeach; ?>
                 </tbody>
             </table>
+        <?php endif; ?>
             <?= \nemmo\attachments\components\AttachmentsInput::widget([
                 'id' => 'file-input', // Optional
                 'model' => $model,

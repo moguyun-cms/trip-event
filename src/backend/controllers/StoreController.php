@@ -96,8 +96,8 @@ class StoreController extends Controller
                     if (!empty($tripAttrs['id'])) {
                         $trip = EventStoreTrip::findOne($tripAttrs['id']);
                     } else {
-                        $trip->event_store_id = $id;
                         $trip = new EventStoreTrip();
+                        $trip->event_store_id = $id;
                     }
                     $trip->attributes = $tripAttrs;
                     $trip->save();

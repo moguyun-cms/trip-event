@@ -28,13 +28,13 @@
 .zhuanTiWrap .module71-productList li .rebate{position: absolute;z-index:3;left: 0;top: 0;text-align: center;font-size: 17px;font-weight: bold;color:#faf2ec;}
 .zhuanTiWrap .module71-productList li .rebate span{font-size:12.6px;font-weight: 400;padding-left: 2px;}
 .zhuanTiWrap .module71-productList li .rebate.yuan{width:62px;height: 62px;left:10px;top: 11px;line-height: 62px;
-    background-image: url("/web_action/web_action_template/1/images/new/lunboBtn.png");background-repeat: no-repeat;background-position:-71px -80px;
+    background-image: url("images/lunboBtn.png");background-repeat: no-repeat;background-position:-71px -80px;
 }
 .zhuanTiWrap .module71-productList li .rebate.tu{width:54px;height: 35px;left:9px;top:0;padding-top: 4px;
-    background-image: url("/web_action/web_action_template/1/images/new/lunboBtn.png");background-repeat: no-repeat;background-position:0 -134px;
+    background-image: url("images/lunboBtn.png");background-repeat: no-repeat;background-position:0 -134px;
 }
 .zhuanTiWrap .module71-productList li .rebate.ao{width:50px;height: 45px;left:15px;top:0;padding-top: 4px;
-    background-image: url("/web_action/web_action_template/1/images/new/lunboBtn.png");background-repeat: no-repeat;background-position:0 -80px;
+    background-image: url("images/lunboBtn.png");background-repeat: no-repeat;background-position:0 -80px;
 }
 .zhuanTiWrap .module71-productList li .jieShao{width:100%;height:116px;overflow: hidden;background-color:#ffffff;}
 .zhuanTiWrap .module71-productList li .jieShao .gText{padding: 10px 20px;line-height:20px;height: 40px;overflow: hidden;}
@@ -49,3 +49,6 @@
 /* Banner模块：10起 */
 .zhuanTiWrap .module10-banner{ overflow:hidden;position: relative; }
 .zhuanTiWrap .module10-banner img{ width: 100%;margin: 0 auto; }
+.mr0 {
+    margin-right: 0 !important;
+}

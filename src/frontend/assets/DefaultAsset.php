@@ -9,7 +9,10 @@ class DefaultAsset extends AssetBundle
     public $sourcePath = '@vendor/moguyun-cms/trip-event/src/frontend/assets';
 
     public $publishOptions = [
-        'only' => ['default.css']
+        'only' => [
+            'default.css',
+            'images/*'
+        ]
     ];
     public $css = [
         'default.css'
