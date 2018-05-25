@@ -14,6 +14,7 @@ use Yii;
  * @property int $updated_at 更新时间
  * @property int $order 序号
  * @property EventStoreTrip[] $trips
+ * @property EventStore[] $children
  */
 class EventStore extends \yii\db\ActiveRecord
 {
@@ -71,5 +72,10 @@ class EventStore extends \yii\db\ActiveRecord
     public function getTrips()
     {
         return $this->hasMany(EventStoreTrip::className(), ['event_store_id' => 'id'])->orderBy('order');
+    }
+
+    public function getChildren()
+    {
+        return $this->hasMany(EventStore::className(), ['parent_id' => 'id'])->orderBy('order');
     }
 }
