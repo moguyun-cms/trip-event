@@ -25,7 +25,8 @@
         }
     ],
     "require": {
-        "nemmo/yii2-attachments": "^1.0@beta"
+        "nemmo/yii2-attachments": "^1.0@beta",
+        "erusev/parsedown": "^1.7"
     },
     "autoload": {
         "psr-4": {

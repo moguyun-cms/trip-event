@@ -44,6 +44,14 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function actionDocs($file = 'README')
+    {
+        $content = file_get_contents(dirname(dirname(__DIR__)) . '/docs/' . $file . '.md');
+        return $this->render('docs', [
+            'content' => $content
+        ]);
+    }
+
     /**
      * Displays a single Event model.
      * @param integer $id

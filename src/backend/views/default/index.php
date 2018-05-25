@@ -12,7 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="event-page-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="alert alert-info" role="alert">
+    <a href="<?= Url::to(['default/docs']); ?>" class="alert-link">帮助文档</a>
+    </div>
 
     <p>
         <?= Html::a('添加', ['create'], ['class' => 'btn btn-success']) ?>
