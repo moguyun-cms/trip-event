@@ -12,6 +12,8 @@ use Yii;
  * @property int $parent_id 隶属仓库
  * @property int $created_at 创建时间
  * @property int $updated_at 更新时间
+ * @property int $order 序号
+ * @property EventStoreTrip[] $trips
  */
 class EventStore extends \yii\db\ActiveRecord
 {
@@ -31,7 +33,7 @@ class EventStore extends \yii\db\ActiveRecord
         return [
             ['title', 'required'],
             ['title', 'string'],
-            [['parent_id', 'created_at', 'updated_at'], 'integer'],
+            [['parent_id', 'created_at', 'updated_at', 'order'], 'integer'],
             ['parent_id', 'default', 'value' => 0]
         ];
     }
@@ -44,6 +46,7 @@ class EventStore extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => '标题',
+            'order' => '序号',
             'parent_id' => '隶属仓库',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
@@ -63,5 +66,10 @@ class EventStore extends \yii\db\ActiveRecord
                 'class' => \nemmo\attachments\behaviors\FileBehavior::className()
             ]
         ];
+    }
+
+    public function getTrips()
+    {
+        return $this->hasMany(EventStoreTrip::className(), ['event_store_id' => 'id'])->orderBy('order');
     }
 }

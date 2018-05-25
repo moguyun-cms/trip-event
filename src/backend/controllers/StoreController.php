@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use moguyun\cms\trip\event\common\models\EventStoreTrip;
 
 /**
  * EventStoreController implements the CRUD actions for EventStore model.
@@ -90,7 +91,19 @@ class StoreController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            if (isset($_POST['Trips'])) {
+                foreach ($_POST['Trips'] as $key => $tripAttrs) {
+                    if (!empty($tripAttrs['id'])) {
+                        $trip = EventStoreTrip::findOne($tripAttrs['id']);
+                    } else {
+                        $trip->event_store_id = $id;
+                        $trip = new EventStoreTrip();
+                    }
+                    $trip->attributes = $tripAttrs;
+                    $trip->save();
+                }
+            }
+            return $this->redirect(['update', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -107,9 +120,9 @@ class StoreController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        $model = $this->findModel($id);
+        $model->delete();
+        return $this->redirect(['index', 'store_id' => $model->parent_id]);
     }
 
     /**

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model moguyun\cms\trip\event\common\models\EventStore */
 
 $this->title = '更新';
-$this->params['breadcrumbs'][] = ['label' => '仓库', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '仓库', 'url' => ['index', 'store_id' => $model->parent_id == 0 ? $model->id : $model->parent_id]];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = '更新';
 ?>
