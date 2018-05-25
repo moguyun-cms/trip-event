@@ -1,4 +1,5 @@
 <?php
-$Parsedown = new \Parsedown();
-echo $Parsedown->text($content);
+$parsedown = new \Parsedown();
 ?>
+<?= $parsedown->text($content); ?>
+<hr/>
