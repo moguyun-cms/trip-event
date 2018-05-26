@@ -70,8 +70,8 @@ class Event extends \yii\db\ActiveRecord
     {
         if ($insert) {
             $store = new EventStore();
-            $store->save();
             $store->title = $this->title;
+            $store->save();
             $this->event_store_id = $store->id;
         }
         return parent::beforeSave($insert);
