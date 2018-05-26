@@ -23,6 +23,7 @@ class m180522_151841_create_event_store_table extends Migration
             'created_at' => $this->integer()->comment('创建时间'),
             'updated_at' => $this->integer()->comment('更新时间'),
             'order' => $this->smallInteger()->comment('序号'),
+            'img_catalog' => $this->smallInteger()->comment('图片类型'),
         ], $tableOptions);
     }
 

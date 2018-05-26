@@ -84,6 +84,7 @@ $this->registerCss($css);
                     'maxFileCount' => 10 // Client max files
                 ]
             ]) ?>
+        <?= $form->field($model, 'img_catalog')->dropDownList(EventStore::getImgCatalogList()); ?>
         <?= $form->field($model, 'order')->textInput(['type' => 'number']); ?>
         </div>
 

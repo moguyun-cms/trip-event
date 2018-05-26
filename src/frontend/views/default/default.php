@@ -1,5 +1,6 @@
 <?php
 use moguyun\cms\trip\event\frontend\assets\DefaultAsset;
+use moguyun\cms\trip\event\common\models\EventStore;
 
 $this->title = $model->title;
 DefaultAsset::register($this);
@@ -14,7 +15,18 @@ DefaultAsset::register($this);
     <?php endforeach; ?>
 
     <?php foreach ($model->store->children as $store) : ?>
-    <div class="moduleAll-mixture" style="background-image:url('<?= $store->files[0]->url; ?>');padding-top:150px;">
+    <div class="moduleAll-mixture"
+    <?php if ($store->img_catalog == EventStore::IMG_CATALOG_BACKGROUND) : ?>
+    style="background-image:url('<?= $store->files[0]->url; ?>');padding-top:150px;"
+    <?php endif; ?>
+    >
+    <?php if ($store->img_catalog == EventStore::IMG_CATALOG_BANNER) : ?>
+    <?php foreach ($store->files as $file) : ?>
+    <div class="module10-banner">
+        <img class="broken" src="<?= $file->url; ?>" alt="<?= $model->store->title; ?>">
+    </div>
+    <?php endforeach; ?>
+    <?php endif;?>
         <div class="content">
             <div class="module71-productList">
             <div class="list">
