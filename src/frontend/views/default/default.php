@@ -45,7 +45,7 @@ DefaultAsset::register($this);
                         </p>
                         <p class="gBuy">
                             <i id="new_price_4336">$<?= $trip->trip->discount; ?></i>
-                            <a href="/route/<?= $trips->trip->id; ?>" target="_blank">立坳订购</a>
+                            <a href="/route/<?= $trip->trip->id; ?>" target="_blank">立坳订购</a>
                         </p>
                         </div>
                     </li>
