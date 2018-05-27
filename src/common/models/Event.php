@@ -63,7 +63,7 @@ class Event extends \yii\db\ActiveRecord
     {
         return [
             [
-                'class' => yii\behaviors\TimestampBehavior::className(),
+                'class' => \yii\behaviors\TimestampBehavior::className(),
             ],
         ];
     }
