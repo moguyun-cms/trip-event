@@ -40,7 +40,7 @@ use yii\helpers\ArrayHelper;
                     <div class="tab-pane form-horizontal" id="tab-seo">
                         <div class="form-body">
                         <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
-                        <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'description')->textarea(['maxlength' => true]) ?>
                         </div>
                     </div>
                 </div>

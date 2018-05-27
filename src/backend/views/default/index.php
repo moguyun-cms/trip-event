@@ -28,17 +28,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             //'template',
             //'event_store_id',
-            //'created_at',
-            //'updated_at',
+            //'created_at:datetime',
+            'updated_at:date',
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {store} {update} {delete}',
+                'template' => '{view} {store} {url} {update} {delete}',
                 'buttons' => [
                     'store' => function ($url, $model, $key) {
                         return Html::a('<i class="fa fa-database fa-fw"></i>', Url::to(['store/index', 'store_id' => $model->store->id]), [
                             'title' => '仓库'
                         ]);
+                    },
+                    'url' => function ($url, $model, $key) {
+                        return Html::a(
+                            '<i class="fa fa-link fa-fw"></i>',
+                            '/web/event/' . $model->slug,
+                            [
+                                'title' => '链接',
+                                'target' => '_blank'
+                            ]
+                        );
                     }
                 ]
             ],

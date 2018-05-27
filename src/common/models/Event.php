@@ -59,6 +59,15 @@ class Event extends \yii\db\ActiveRecord
         ];
     }
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => yii\behaviors\TimestampBehavior::className(),
+            ],
+        ];
+    }
+
     public static function getTemplateList()
     {
         return [
